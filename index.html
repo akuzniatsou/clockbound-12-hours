@@ -6,44 +6,6 @@
     <title>Unity Web Player | Clockbound: Twelve Hours</title>
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
-    <style>
-      @media (orientation: landscape) {
-        body {
-          transform: rotate(90deg);
-          transform-origin: top left;
-          width: 100vh;
-          height: 100vw;
-          position: absolute;
-          top: 0;
-          left: 0;
-        }
-      }
-      @media (orientation: portrait) {
-        body {
-          transform: rotate(0deg);
-        }
-      }
-    </style>
-    <script type="module">
-      import { viewport, init, isTMA } from "https://esm.sh/@telegram-apps/sdk@2";
-
-      async function initTg() {
-        if (await isTMA()) {
-          init();
-
-          if (viewport.mount.isAvailable()) {
-            await viewport.mount();
-            viewport.expand();
-          }
-
-          if (viewport.requestFullscreen.isAvailable()) {
-            await viewport.requestFullscreen();
-          }
-        }
-      }
-
-      initTg();
-    </script>
   </head>
   <body>
     <div id="unity-container" class="unity-desktop">
